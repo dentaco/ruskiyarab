@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Andrey Z — Bartender, Dubai · @ruskiyarab</title>
-<meta name="description" content="Andrey Z — Dubai bartender behind the bar at Harat's Republic. Try the free-pour test, browse the reels, and book a call to talk drinks.">
+<meta name="description" content="Andrey Z — Dubai bartender behind the bar at Harat's Republic. The reels, the night shift, and a call to talk drinks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,24 +19,17 @@
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 
-<!-- PRELOADER -->
+<!-- PRELOADER: neon sign warming up -->
 <div class="preloader">
-  <div class="preloader-inner">
-    <div class="preloader-glass">
-      <div class="preloader-liquid"></div>
-    </div>
-    <div class="preloader-word">ruskiyarab</div>
-  </div>
+  <div class="preloader-sign">RUSKIYARAB</div>
 </div>
 
 <!-- HEADER -->
 <header class="site-header">
-  <a href="#top" class="site-name" data-magnetic>Andrey<span class="dot">.</span></a>
+  <a href="#top" class="site-name" data-magnetic>ANDREY<span class="dot">Z</span></a>
   <nav>
-    <a href="#pour" data-hover>The Pour Test</a>
     <a href="#bar" data-hover>Behind the Bar</a>
     <a href="#about" data-hover>About</a>
-    <a href="#daily" data-hover>Daily Pour</a>
     <a href="#book" class="nav-cta" data-hover>Book a Call</a>
   </nav>
   <button class="menu-btn" aria-label="Open menu"><span></span><span></span></button>
@@ -44,10 +37,8 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu">
-  <a href="#pour" data-hover>The Pour Test</a>
   <a href="#bar" data-hover>Behind the Bar</a>
   <a href="#about" data-hover>About</a>
-  <a href="#daily" data-hover>Daily Pour</a>
   <a href="#book" data-hover>Book a Call</a>
 </div>
 
@@ -58,205 +49,166 @@
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-vignette"></div>
 
-    <div class="badge-pill badge-pill-1" data-float data-hover>Behind the bar · Harat's Republic</div>
-    <div class="badge-pill badge-pill-2" data-float data-hover>Dubai, UAE</div>
-    <div class="badge-pill badge-pill-3" data-float data-hover>raised in the Emirates 🇦🇪</div>
-
     <div class="hero-content">
-      <span class="hero-badge">Bartender · @ruskiyarab</span>
+      <div class="hero-topline mono">
+        <span>DXB · 25.2048° N</span>
+        <span>SHIFT: 17:00 — LAST CALL</span>
+        <span>@ruskiyarab</span>
+      </div>
       <h1 class="hero-title">
-        <span class="line"><span class="word">Good</span> <span class="word">drinks</span></span>
-        <span class="line"><span class="word">are</span> <span class="word hl">stirred</span><span class="word">,</span></span>
-        <span class="line"><span class="word">not</span> <span class="word">rushed</span><span class="word dot-accent">.</span></span>
+        <span class="ht-row"><span class="ht-word">NIGHT</span></span>
+        <span class="ht-row"><span class="ht-word neon" id="neonWord">SHIFT</span></span>
+        <span class="ht-row"><span class="ht-word outline">BARTENDER</span></span>
       </h1>
-      <p class="hero-sub">I'm Andrey — behind the bar in Dubai, learning something new every shift and pouring it into every glass.</p>
-      <a href="#pour" class="hero-cta" data-hover data-magnetic>
-        <span>Think you can pour a 30?</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <div class="hero-sub-row">
+        <p class="hero-sub">Andrey Z. Raised in the Emirates 🇦🇪, pouring at Harat's Republic, Dubai. The bar teaches me something every night — pull up a stool.</p>
+        <a href="#book" class="hero-cta" data-hover data-magnetic>
+          <span class="mono">TALK DRINKS →</span>
+        </a>
+      </div>
     </div>
 
-    <div class="scroll-cue"><span>scroll down</span><i></i></div>
+    <div class="scroll-cue mono">SCROLL<span class="cue-line"></span></div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Free Pour</span><span>◆</span>
-      <span>Count to Four</span><span>◆</span>
-      <span>Behind the Bar</span><span>◆</span>
-      <span>Last Call</span><span>◆</span>
-      <span>Michelada O'Clock</span><span>◆</span>
-      <span>Free Pour</span><span>◆</span>
-      <span>Count to Four</span><span>◆</span>
-      <span>Behind the Bar</span><span>◆</span>
-      <span>Last Call</span><span>◆</span>
-      <span>Michelada O'Clock</span><span>◆</span>
+  <!-- OVERHEARD — double marquee of things bartenders actually hear -->
+  <div class="overheard" aria-label="Things people say at the bar">
+    <div class="oh-label mono">OVERHEARD AT THE BAR ↓</div>
+    <div class="marquee m-top">
+      <div class="marquee-track">
+        <span>“do you have a charger?”</span><i>✕</i>
+        <span>“can you pour a little more?”</span><i>✕</i>
+        <span>“what's the wifi password?”</span><i>✕</i>
+        <span>“make it strong 😉”</span><i>✕</i>
+        <span>“surprise me”</span><i>✕</i>
+        <span>“do you have a charger?”</span><i>✕</i>
+        <span>“can you pour a little more?”</span><i>✕</i>
+        <span>“what's the wifi password?”</span><i>✕</i>
+        <span>“make it strong 😉”</span><i>✕</i>
+        <span>“surprise me”</span><i>✕</i>
+      </div>
+    </div>
+    <div class="marquee m-bottom">
+      <div class="marquee-track">
+        <span>“is the kitchen still open?”</span><i>✕</i>
+        <span>“same again”</span><i>✕</i>
+        <span>“he's paying”</span><i>✕</i>
+        <span>“one for you too!”</span><i>✕</i>
+        <span>“last one, I promise”</span><i>✕</i>
+        <span>“is the kitchen still open?”</span><i>✕</i>
+        <span>“same again”</span><i>✕</i>
+        <span>“he's paying”</span><i>✕</i>
+        <span>“one for you too!”</span><i>✕</i>
+        <span>“last one, I promise”</span><i>✕</i>
+      </div>
     </div>
   </div>
-
-  <!-- THE POUR TEST -->
-  <section id="pour" class="pour">
-    <div class="section-head">
-      <div class="eyebrow reveal-up">The Pour Test</div>
-      <h2 class="reveal-up">Can you free-pour a <span class="hl-mark">30ml</span>?</h2>
-      <p class="pour-sub reveal-up">Every bartender counts. Hold the bottle to pour, let go when you think you've hit 30ml — a clean four-count. I do this a hundred times a night. Your turn.</p>
-    </div>
-
-    <div class="pour-stage reveal-up">
-      <div class="pour-scene" id="pourScene">
-        <svg class="pour-svg" viewBox="0 0 560 480" fill="none" aria-label="Free-pour game: a bottle tilting over a rocks glass">
-          <defs>
-            <clipPath id="pGlassClip">
-              <path d="M155 300 L159 442 Q159 456 173 456 L347 456 Q361 456 361 442 L365 300 Z"/>
-            </clipPath>
-            <linearGradient id="pLiquid" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#f77f00"/>
-              <stop offset="1" stop-color="#b8541c"/>
-            </linearGradient>
-          </defs>
-
-          <!-- bottle: idle upright at the right, tips over the glass on pour -->
-          <g class="p-bottle">
-            <rect x="368" y="30" width="64" height="150" rx="14" fill="#3b1d14" stroke="rgba(242,232,220,.4)" stroke-width="3"/>
-            <rect x="388" y="-22" width="24" height="60" rx="6" fill="#3b1d14" stroke="rgba(242,232,220,.4)" stroke-width="3"/>
-            <rect x="392" y="-38" width="16" height="22" rx="4" fill="#c9a86a"/>
-            <rect x="376" y="72" width="48" height="66" rx="6" fill="rgba(229,56,59,.85)"/>
-            <text x="400" y="112" text-anchor="middle" font-family="Caveat, cursive" font-size="26" fill="#f2e8dc">rus</text>
-          </g>
-
-          <!-- stream: falls from the tilted bottle mouth into the glass -->
-          <rect class="p-stream" x="331" y="158" width="8" height="0" rx="4" fill="#f7a04b"/>
-
-          <!-- glass -->
-          <g class="p-glass">
-            <path d="M150 292 L155 444 Q155 462 173 462 L347 462 Q365 462 365 444 L370 292 Z"
-                  stroke="rgba(240,234,220,.55)" stroke-width="5" fill="rgba(255,255,255,0.03)"/>
-            <ellipse cx="260" cy="292" rx="110" ry="13" stroke="rgba(240,234,220,.55)" stroke-width="5" fill="none"/>
-          </g>
-          <g clip-path="url(#pGlassClip)">
-            <rect class="p-fill" x="140" y="456" width="240" height="170" fill="url(#pLiquid)"/>
-            <!-- overflow splash -->
-            <g class="p-splash" opacity="0">
-              <circle cx="180" cy="300" r="5" fill="#f7a04b"/>
-              <circle cx="340" cy="296" r="4" fill="#f7a04b"/>
-              <circle cx="260" cy="290" r="6" fill="#ffba49"/>
-            </g>
-          </g>
-
-          <!-- 30ml target line -->
-          <g class="p-target">
-            <line x1="140" y1="382" x2="380" y2="382" stroke="rgba(255,186,73,.6)" stroke-width="2" stroke-dasharray="7 7"/>
-            <text x="392" y="387" font-family="Space Grotesk" font-size="15" fill="rgba(255,186,73,.85)">30ml</text>
-          </g>
-        </svg>
-
-        <div class="pour-readout">
-          <span class="pour-ml" id="pourMl">0</span><span class="pour-unit">ml</span>
-        </div>
-      </div>
-
-      <div class="pour-panel">
-        <button class="pour-btn" id="pourBtn" data-hover>
-          <span class="pour-btn-label">hold to pour</span>
-        </button>
-        <p class="pour-hint">hold the button, your mouse, or <kbd>space</kbd> — release at 30ml</p>
-        <div class="pour-result" id="pourResult" aria-live="polite"></div>
-        <div class="pour-best" id="pourBest"></div>
-      </div>
-    </div>
-  </section>
 
   <!-- BEHIND THE BAR -->
   <section id="bar" class="bar-section">
     <div class="section-head">
-      <div class="eyebrow reveal-up">From the Feed</div>
-      <h2 class="reveal-up">Behind the <span class="hl-mark">bar</span></h2>
-      <div class="section-count reveal-up">@ruskiyarab</div>
+      <div class="sh-index mono">01 / FROM THE FEED</div>
+      <h2>BEHIND<br>THE <span class="neon-mark">BAR</span></h2>
+      <p class="sh-note mono">straight from instagram — tap a card to watch it there</p>
     </div>
-    <p class="deck-hint reveal-up">Straight from Instagram — tap any card to watch it there.</p>
 
     <div class="ig-grid">
       <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/reel/DYzQNWBIB9N/" target="_blank" rel="noopener" data-hover data-tilt>
+        <span class="ig-num mono">001</span>
         <img src="images/reel-gen-z.jpg" alt="Reel: POV working with Gen Z — Andrey pulling a pint at Harat's Republic" loading="lazy">
-        <div class="ig-meta"><span class="ig-type">▶ Reel</span><h3>POV: working with Gen&nbsp;Z 😂</h3></div>
+        <div class="ig-meta"><span class="ig-type mono">▶ REEL</span><h3>POV: working with Gen&nbsp;Z 😂</h3></div>
       </a>
       <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/reel/DZFzysLoBia/" target="_blank" rel="noopener" data-hover data-tilt>
+        <span class="ig-num mono">002</span>
         <img src="images/reel-leave-us-alone.jpg" alt="Reel: We're not gonna be in your reels — two bartenders behind the bar" loading="lazy">
-        <div class="ig-meta"><span class="ig-type">▶ Reel</span><h3>"We're not gonna be in your reels."</h3></div>
+        <div class="ig-meta"><span class="ig-type mono">▶ REEL</span><h3>"We're not gonna be in your reels."</h3></div>
       </a>
       <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/reel/DZvptAPowtv/" target="_blank" rel="noopener" data-hover data-tilt>
+        <span class="ig-num mono">003</span>
         <img src="images/reel-michelada.jpg" alt="Reel: micheladas and neon at the bar" loading="lazy">
-        <div class="ig-meta"><span class="ig-type">▶ Reel</span><h3>Michelada nights</h3></div>
+        <div class="ig-meta"><span class="ig-type mono">▶ REEL</span><h3>Michelada nights</h3></div>
       </a>
       <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/p/DTqoRsriNBe/" target="_blank" rel="noopener" data-hover data-tilt>
+        <span class="ig-num mono">004</span>
         <img src="images/photo-bottle.jpg" alt="Andrey balancing a bottle of Jack Daniel's on his elbow" loading="lazy">
-        <div class="ig-meta"><span class="ig-type">◉ Photo</span><h3>Chillin 😎</h3></div>
+        <div class="ig-meta"><span class="ig-type mono">◉ PHOTO</span><h3>Chillin 😎</h3></div>
       </a>
       <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/p/DTqoRsriNBe/?img_index=3" target="_blank" rel="noopener" data-hover data-tilt>
+        <span class="ig-num mono">005</span>
         <img src="images/photo-pour.jpg" alt="Andrey free-pouring into a jigger behind the bar" loading="lazy">
-        <div class="ig-meta"><span class="ig-type">◉ Photo</span><h3>Count the pour</h3></div>
+        <div class="ig-meta"><span class="ig-type mono">◉ PHOTO</span><h3>Count the pour</h3></div>
       </a>
       <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/p/DTqoRsriNBe/?img_index=4" target="_blank" rel="noopener" data-hover data-tilt>
+        <span class="ig-num mono">006</span>
         <img src="images/photo-shaker.jpg" alt="Andrey mid-shake with a Boston shaker, grinning" loading="lazy">
-        <div class="ig-meta"><span class="ig-type">◉ Photo</span><h3>Shaken — this once</h3></div>
+        <div class="ig-meta"><span class="ig-type mono">◉ PHOTO</span><h3>Shaken — this once</h3></div>
       </a>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT: staff badge -->
   <section id="about" class="about">
-    <div class="about-glow"></div>
+    <div class="section-head">
+      <div class="sh-index mono">02 / THE GUY POURING</div>
+      <h2>STAFF<br><span class="neon-mark">CARD</span></h2>
+    </div>
     <div class="about-inner">
-      <div class="about-portrait reveal-up">
-        <img src="images/photo-laugh.jpg" alt="Andrey laughing behind the bar at Harat's Republic">
-        <span class="portrait-tag" data-float>on shift, always 👋</span>
+      <div class="badge-card reveal-up" data-tilt data-hover>
+        <div class="badge-punch"></div>
+        <div class="badge-head mono"><span>HARAT'S REPUBLIC · DXB</span><span>BAR TEAM</span></div>
+        <img class="badge-photo" src="images/photo-laugh.jpg" alt="Andrey laughing behind the bar at Harat's Republic">
+        <div class="badge-rows mono">
+          <div class="badge-row"><span>NAME</span><b>ANDREY Z</b></div>
+          <div class="badge-row"><span>CALLSIGN</span><b>@ruskiyarab</b></div>
+          <div class="badge-row"><span>ORIGIN</span><b>RAISED IN THE EMIRATES 🇦🇪</b></div>
+          <div class="badge-row"><span>STATION</span><b>MAIN BAR · TAPS + SHAKERS</b></div>
+          <div class="badge-row"><span>POLICY</span><b>STIRRED, NEVER RUSHED</b></div>
+        </div>
+        <div class="badge-barcode" aria-hidden="true"></div>
       </div>
       <div class="about-text reveal-up">
-        <div class="eyebrow">About</div>
-        <h2>Hi, I'm Andrey — <span class="script">ruskiyarab</span> online.</h2>
-        <p>Raised in the Emirates 🇦🇪, now behind the bar at Harat's Republic in Dubai. I got into bartending because it's equal parts craft and conversation — every shift someone teaches me something, and every week I find a technique, a bottle, or a story worth passing on. This site is where that lands.</p>
-        <a class="about-cta" href="#book" data-hover data-magnetic>Talk drinks with me <span>→</span></a>
+        <p>I got behind the bar because it's equal parts craft and conversation. Every shift someone teaches me something — a technique, a bottle, a story — and I collect all of it.</p>
+        <p>Off shift I'm filming the chaos for Instagram and hunting down whatever the bar world does next. If that's your kind of conversation, let's have it properly.</p>
+        <a class="about-cta mono" href="#book" data-hover data-magnetic>OPEN A TAB WITH ME →</a>
       </div>
     </div>
   </section>
 
-  <!-- DAILY POUR -->
-  <section id="daily" class="daily">
-    <div class="section-head">
-      <div class="eyebrow reveal-up">The Daily Pour</div>
-      <h2 class="reveal-up">New things I find out, <span class="hl-mark">daily</span></h2>
-      <p class="daily-sub reveal-up">Little discoveries from behind the bar — the kind of stuff we can nerd out about on a call.</p>
-    </div>
-    <div class="coaster-row">
-      <article class="coaster c-1 reveal-up" data-hover>
-        <span class="coaster-day">this week</span>
-        <p>A four-count free pour lands 30ml with a standard spout — rhythm beats measuring, but only after a thousand reps.</p>
-      </article>
-      <article class="coaster c-2 reveal-up" data-hover>
-        <span class="coaster-day">last shift</span>
-        <p>Express the peel <em>before</em> it touches the glass — the oils land on the surface, not the rim.</p>
-      </article>
-      <article class="coaster c-3 reveal-up" data-hover>
-        <span class="coaster-day">always</span>
-        <p>A michelada at 2am fixes more problems than it causes. Ask the regulars.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- BOOK A CALL -->
+  <!-- BOOK A CALL: the tab / receipt -->
   <section id="book" class="book">
     <div class="section-head">
-      <div class="eyebrow reveal-up">Pull Up a Stool</div>
-      <h2 class="reveal-up">Let's talk bartending <span class="hl-mark">on a call</span></h2>
-      <p class="book-sub reveal-up">Cocktails, techniques, what I'm learning behind the bar, menus for your venue — 30 minutes, no pressure. DM me and we'll lock a time.</p>
+      <div class="sh-index mono">03 / SETTLE UP</div>
+      <h2>YOUR<br><span class="neon-mark">TAB</span></h2>
     </div>
-    <div class="book-actions reveal-up">
-      <a class="book-cta" href="https://ig.me/m/ruskiyarab" target="_blank" rel="noopener" data-hover data-magnetic>
-        <span>DM me on Instagram</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="book-cta ghost" href="https://www.instagram.com/ruskiyarab/" target="_blank" rel="noopener" data-hover>@ruskiyarab</a>
+    <div class="book-inner">
+      <div class="receipt reveal-up" data-hover>
+        <div class="receipt-head mono">
+          <div class="receipt-title">RUSKIYARAB</div>
+          <div>DUBAI, UAE — THE INTERNET</div>
+          <div class="receipt-rule"></div>
+        </div>
+        <div class="receipt-lines mono">
+          <div class="r-line"><span>1× CALL — TALK BARTENDING</span><span>0.00</span></div>
+          <div class="r-line"><span>1× COCKTAIL NERDERY</span><span>0.00</span></div>
+          <div class="r-line"><span>1× WHAT I LEARNED THIS WEEK</span><span>0.00</span></div>
+          <div class="r-line"><span>1× MENU IDEAS FOR YOUR VENUE</span><span>0.00</span></div>
+          <div class="receipt-rule"></div>
+          <div class="r-line r-total"><span>TOTAL</span><span>0.00 AED</span></div>
+          <div class="r-line"><span>TIP</span><span>a follow 😉</span></div>
+        </div>
+        <div class="receipt-foot mono">
+          <div>30 MIN · NO PRESSURE · DM TO LOCK A TIME</div>
+          <div class="receipt-stars">✶ ✶ ✶ ✶ ✶</div>
+        </div>
+      </div>
+      <div class="book-actions reveal-up">
+        <a class="book-cta" href="https://ig.me/m/ruskiyarab" target="_blank" rel="noopener" data-hover data-magnetic>
+          <span class="mono">DM ME ON INSTAGRAM ↗</span>
+        </a>
+        <a class="book-cta ghost" href="https://www.instagram.com/ruskiyarab/" target="_blank" rel="noopener" data-hover>
+          <span class="mono">@ruskiyarab</span>
+        </a>
+      </div>
     </div>
     <!-- When a Cal.com link exists, swap the buttons above for the inline embed (see julz-portfolio for reference) -->
   </section>
@@ -264,16 +216,10 @@
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-name">Andrey Z</div>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/ruskiyarab/" target="_blank" rel="noopener" data-hover>@ruskiyarab</a>
-      <span>·</span>
-      <span>Harat's Republic</span>
-      <span>·</span>
-      <span>Dubai, UAE</span>
-    </div>
-    <div class="footer-meta">© <span id="year"></span> ruskiyarab. Stirred, never shaken.</div>
+  <div class="footer-inner mono">
+    <span>ANDREY Z — BARTENDER, DUBAI</span>
+    <span><a href="https://www.instagram.com/ruskiyarab/" target="_blank" rel="noopener" data-hover>@RUSKIYARAB</a> · HARAT'S REPUBLIC</span>
+    <span>© <span id="year"></span> · STIRRED, NEVER RUSHED</span>
   </div>
 </footer>
 
