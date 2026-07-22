@@ -177,6 +177,32 @@ function neonFlickerLoop() {
   })();
 })();
 
+/* ---------- hero still: slow ken burns + tired-neon flicker ---------- */
+if (!reduceMotion) {
+  const heroImg = document.querySelector(".hero-media img");
+  if (heroImg) {
+    // endless lazy drift, like a locked-off camera that isn't quite locked off
+    gsap.to(heroImg, { scale: 1.14, xPercent: -1.2, duration: 26, yoyo: true, repeat: -1, ease: "sine.inOut" });
+    // the room dims when the neon misbehaves
+    const dip = () => {
+      const tl = gsap.timeline({ onComplete: () => gsap.delayedCall(gsap.utils.random(4, 9), dip) });
+      tl.to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(.72)", duration: 0.05 })
+        .to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(1)", duration: 0.07 })
+        .to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(.85)", duration: 0.04, delay: 0.05 })
+        .to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(1)", duration: 0.06 });
+    };
+    gsap.delayedCall(3.2, dip);
+  }
+}
+
+/* ---------- atmo strip parallax ---------- */
+document.querySelectorAll(".atmo-media img").forEach((img) => {
+  gsap.fromTo(img, { yPercent: -10 }, {
+    yPercent: 10, ease: "none",
+    scrollTrigger: { trigger: img.closest(".atmo-strip"), start: "top bottom", end: "bottom top", scrub: true },
+  });
+});
+
 /* ---------- overheard marquees: two lanes, opposite directions ---------- */
 if (!reduceMotion) {
   gsap.to(".m-top .marquee-track", { xPercent: -50, duration: 26, repeat: -1, ease: "none" });

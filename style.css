@@ -83,6 +83,12 @@ img{max-width:100%;display:block}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding:0 4vw 9svh}
+.hero-media{position:absolute;inset:0;overflow:hidden}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;
+  opacity:.55;filter:saturate(1.05) contrast(1.05);
+  transform:scale(1.06);will-change:transform;
+}
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%}
 .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 25%,rgba(8,7,12,.9) 100%);pointer-events:none}
 .hero-content{position:relative;z-index:2;width:100%}
@@ -178,6 +184,16 @@ section{padding:130px 4vw}
 @media (max-width:560px){.ig-grid{grid-template-columns:1fr}}
 
 /* ===== about / staff badge ===== */
+/* atmo break — full-bleed still with parallax */
+.atmo-strip{position:relative;height:52vh;min-height:340px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.atmo-media{position:absolute;inset:-12% 0}
+.atmo-media img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85;will-change:transform}
+.atmo-caption{
+  position:absolute;left:4vw;bottom:22px;z-index:2;display:flex;gap:26px;
+  font-size:.7rem;letter-spacing:.22em;color:var(--ink-dim);
+}
+.atmo-caption span:first-child{color:var(--neon)}
+
 .about{background:var(--bg-2)}
 .about-inner{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:6vw;align-items:center;max-width:1150px}
 .badge-card{
@@ -209,7 +225,11 @@ section{padding:130px 4vw}
 @media (max-width:860px){.about-inner{grid-template-columns:1fr}}
 
 /* ===== book / receipt ===== */
-.book{background:var(--bg)}
+.book{background:var(--bg);position:relative;overflow:hidden}
+.book-bg{position:absolute;inset:0;pointer-events:none}
+.book-bg img{width:100%;height:100%;object-fit:cover;opacity:.22;filter:saturate(1.1)}
+.book-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 30%,transparent 65%,var(--bg) 100%)}
+.book .section-head,.book-inner{position:relative;z-index:2}
 .book-inner{display:grid;grid-template-columns:minmax(300px,400px) 1fr;gap:6vw;align-items:center;max-width:1150px}
 .receipt{
   background:#f4efe6;color:#191510;padding:30px 26px;
