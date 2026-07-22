@@ -182,14 +182,17 @@ if (!reduceMotion) {
   const heroImg = document.querySelector(".hero-media img");
   if (heroImg) {
     // endless lazy drift, like a locked-off camera that isn't quite locked off
-    gsap.to(heroImg, { scale: 1.14, xPercent: -1.2, duration: 26, yoyo: true, repeat: -1, ease: "sine.inOut" });
-    // the room dims when the neon misbehaves
+    const kb = gsap.to(heroImg, { scale: 1.14, xPercent: -1.2, duration: 26, yoyo: true, repeat: -1, ease: "sine.inOut" });
+    // don't burn frames on it once the hero is scrolled away
+    new IntersectionObserver(([e]) => (e.isIntersecting ? kb.play() : kb.pause()))
+      .observe(document.querySelector(".hero"));
+    // the room dims when the neon misbehaves — opacity only, stays on the compositor
     const dip = () => {
       const tl = gsap.timeline({ onComplete: () => gsap.delayedCall(gsap.utils.random(4, 9), dip) });
-      tl.to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(.72)", duration: 0.05 })
-        .to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(1)", duration: 0.07 })
-        .to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(.85)", duration: 0.04, delay: 0.05 })
-        .to(heroImg, { filter: "saturate(1.05) contrast(1.05) brightness(1)", duration: 0.06 });
+      tl.to(heroImg, { opacity: 0.32, duration: 0.05 })
+        .to(heroImg, { opacity: 0.55, duration: 0.07 })
+        .to(heroImg, { opacity: 0.42, duration: 0.04, delay: 0.05 })
+        .to(heroImg, { opacity: 0.55, duration: 0.06 });
     };
     gsap.delayedCall(3.2, dip);
   }
