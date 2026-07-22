@@ -164,72 +164,127 @@ document.querySelectorAll(".reveal-up").forEach((el) => {
   });
 });
 
-/* ---------- negroni scrollytelling ---------- */
-(function negroni() {
-  const steps = gsap.utils.toArray(".n-step");
-  const stream = ".pour-stream";
+/* ---------- pour test game ---------- */
+(function pourTest() {
+  const btn = document.getElementById("pourBtn");
+  if (!btn) return;
+  const mlEl = document.getElementById("pourMl");
+  const resultEl = document.getElementById("pourResult");
+  const bestEl = document.getElementById("pourBest");
+  const label = btn.querySelector(".pour-btn-label");
 
-  // helpers: show a pour stream in a colour, raise a liquid layer
-  function pour(tl, color, at) {
-    tl.set(stream, { attr: { fill: color } }, at)
-      .to(stream, { attr: { height: 350 }, duration: 0.18, ease: "power2.in" }, at)
-      .to(stream, { attr: { y: 350, height: 0 }, duration: 0.22, ease: "power2.out" }, at + 0.55)
-      .set(stream, { attr: { y: -10 } });
-  }
-  function step(tl, i, at) {
-    if (i > 0) tl.to(steps[i - 1], { opacity: 0, y: -18, duration: 0.25 }, at);
-    tl.fromTo(steps[i], { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.3 }, at + 0.2);
+  const TARGET = 30, MAX = 60, RATE = 15; // ml per second — a real four-count pour
+  // fill geometry: glass runs y 456 (empty) → level rises ~2.47px per ml; 30ml lands on the 382 target line
+  const EMPTY_Y = 456, PX_PER_ML = (456 - 382) / 30;
+
+  let ml = 0, pouring = false, raf = null, startT = 0, locked = false, best = null;
+
+  function setLiquid() {
+    gsap.set(".p-fill", { attr: { y: EMPTY_Y - ml * PX_PER_ML } });
+    mlEl.textContent = Math.round(ml);
   }
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".negroni",
-      start: "top top",
-      end: "+=4200",
-      scrub: reduceMotion ? false : 0.6,
-      pin: ".negroni-pin",
-    },
-    defaults: { ease: "none" },
+  // ml is derived from elapsed hold time, not frame ticks — immune to rAF throttling
+  function currentMl() {
+    return Math.min(MAX, ((performance.now() - startT) / 1000) * RATE);
+  }
+
+  function startPour() {
+    if (pouring || locked) return;
+    pouring = true;
+    btn.classList.add("pouring");
+    label.textContent = "pouring…";
+    gsap.to(".p-bottle", { rotation: -130, svgOrigin: "400 110", duration: 0.3, ease: "power2.out" });
+    gsap.to(".p-stream", { attr: { height: 140 }, duration: 0.15, ease: "power2.in", delay: 0.2 });
+    startT = performance.now();
+    raf = requestAnimationFrame(tick);
+  }
+
+  function tick() {
+    if (!pouring) return;
+    ml = currentMl();
+    setLiquid();
+    if (ml >= MAX) return spill();
+    raf = requestAnimationFrame(tick);
+  }
+
+  function stopPour() {
+    if (!pouring) return;
+    pouring = false;
+    cancelAnimationFrame(raf);
+    ml = currentMl();
+    setLiquid();
+    btn.classList.remove("pouring");
+    gsap.to(".p-bottle", { rotation: 0, svgOrigin: "400 110", duration: 0.35, ease: "power2.out" });
+    gsap.to(".p-stream", { attr: { height: 0 }, duration: 0.18, ease: "power2.out" });
+    if (ml >= MAX) return spill();
+    grade();
+  }
+
+  function grade() {
+    locked = true;
+    const diff = ml - TARGET;
+    const off = Math.abs(diff);
+    let verdict, quip, good = false;
+    if (off <= 1.5) {
+      good = true; verdict = "Dead on. 🎯";
+      quip = "That's a bartender's pour. Come take a shift at Harat's.";
+      gsap.fromTo(".pour-svg", { scale: 1 }, { scale: 1.05, duration: 0.25, yoyo: true, repeat: 1, ease: "power1.inOut" });
+    } else if (off <= 4) {
+      good = true; verdict = diff > 0 ? "Close — a touch heavy." : "Close — a touch shy.";
+      quip = "You'd survive a Tuesday. Friday rush would eat you alive.";
+    } else if (diff > 0) {
+      verdict = "Heavy hand. 🫗";
+      quip = "Generous — but the bar manager is crying. Try a faster count.";
+      gsap.fromTo(".pour-scene", { x: -6 }, { x: 0, duration: 0.5, ease: "elastic.out(1,0.3)" });
+    } else {
+      verdict = "Shy pour.";
+      quip = "The guest is squinting at that glass. Commit to the count.";
+      gsap.fromTo(".pour-scene", { x: -6 }, { x: 0, duration: 0.5, ease: "elastic.out(1,0.3)" });
+    }
+    resultEl.innerHTML =
+      `<span class="verdict ${good ? "good" : "bad"}">${Math.round(ml)}ml — ${verdict}</span><span class="quip">${quip}</span>`;
+    if (best === null || off < Math.abs(best - TARGET)) {
+      best = ml;
+      bestEl.textContent = `best pour: ${Math.round(best)}ml`;
+    }
+    label.textContent = "pour again";
+    setTimeout(() => { locked = false; resetGlass(); }, 900);
+  }
+
+  function spill() {
+    pouring = false;
+    cancelAnimationFrame(raf);
+    btn.classList.remove("pouring");
+    locked = true;
+    gsap.to(".p-bottle", { rotation: 0, svgOrigin: "400 110", duration: 0.3 });
+    gsap.to(".p-stream", { attr: { height: 0 }, duration: 0.2 });
+    gsap.fromTo(".p-splash", { opacity: 1, y: 0 }, { opacity: 0, y: -26, duration: 0.7, ease: "power2.out" });
+    gsap.fromTo(".pour-scene", { x: -8 }, { x: 0, duration: 0.6, ease: "elastic.out(1,0.3)" });
+    resultEl.innerHTML =
+      `<span class="verdict bad">${MAX}ml — Overflow. 🌊</span><span class="quip">That's a double and a mop. We don't talk about this one.</span>`;
+    label.textContent = "pour again";
+    setTimeout(() => { locked = false; resetGlass(); }, 900);
+  }
+
+  function resetGlass() {
+    ml = 0;
+    gsap.to(".p-fill", { attr: { y: EMPTY_Y }, duration: 0.5, ease: "power2.inOut", onUpdate: null });
+    mlEl.textContent = "0";
+  }
+
+  // pointer + keyboard
+  btn.addEventListener("pointerdown", (e) => { e.preventDefault(); startPour(); });
+  window.addEventListener("pointerup", stopPour);
+  window.addEventListener("pointercancel", stopPour);
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Space" && !e.repeat && isInView()) { e.preventDefault(); startPour(); }
   });
-
-  // 01 — glass
-  tl.from(".g-glass", { opacity: 0, y: 40, duration: 0.5 }, 0);
-  step(tl, 0, 0);
-
-  // 02 — ice drops
-  step(tl, 1, 1);
-  tl.to(".ice", { y: 0, duration: 0.55, ease: "bounce.out" }, 1.15);
-
-  // 03 — gin
-  step(tl, 2, 2);
-  pour(tl, "#e8e4da", 2.15);
-  tl.to(".liq-gin", { attr: { y: 352 }, duration: 0.7, ease: "power1.inOut" }, 2.2);
-
-  // 04 — campari
-  step(tl, 3, 3);
-  pour(tl, "#e5383b", 3.15);
-  tl.to(".liq-campari", { attr: { y: 250 }, duration: 0.7, ease: "power1.inOut" }, 3.2);
-
-  // 05 — vermouth
-  step(tl, 4, 4);
-  pour(tl, "#d1495b", 4.15);
-  tl.to(".liq-vermouth", { attr: { y: 150 }, duration: 0.7, ease: "power1.inOut" }, 4.2);
-  tl.to(".ratio-badge", { opacity: 1, y: 0, duration: 0.3, stagger: 0.1 }, 4.6);
-
-  // 06 — stir + peel
-  step(tl, 5, 5);
-  tl.to(".spoon", { opacity: 1, duration: 0.2 }, 5.1)
-    .to(".spoon", { rotation: 10, svgOrigin: "238 340", duration: 0.18, repeat: 5, yoyo: true }, 5.2)
-    .to(".swirl", { opacity: 1, duration: 0.3 }, 5.25)
-    .to(".liq-final", { opacity: 1, duration: 0.6 }, 5.3)
-    .to(".liq-gin,.liq-campari,.liq-vermouth", { opacity: 0, duration: 0.5 }, 5.35)
-    .to(".spoon", { opacity: 0, y: -30, duration: 0.25 }, 5.95)
-    .to(".swirl", { opacity: 0, duration: 0.3 }, 6.0)
-    .fromTo(".peel", { opacity: 0, y: -60, rotation: -30, svgOrigin: "200 90" },
-                     { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "power2.out" }, 6.1)
-    .to(".spritz circle", { opacity: 0.9, scale: 1.6, svgOrigin: "200 100", duration: 0.25, stagger: 0.05 }, 6.5)
-    .to(".spritz circle", { opacity: 0, duration: 0.3 }, 6.9)
-    .to(".negroni-svg", { scale: 1.04, duration: 0.4, ease: "power1.inOut" }, 6.9);
+  window.addEventListener("keyup", (e) => { if (e.code === "Space") stopPour(); });
+  function isInView() {
+    const r = document.getElementById("pour").getBoundingClientRect();
+    return r.top < innerHeight * 0.8 && r.bottom > innerHeight * 0.2;
+  }
 })();
 
 /* ---------- card tilt ---------- */
