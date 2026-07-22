@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrey Z — Bartender, Dubai · @ruskiyarab</title>
+<meta name="description" content="Andrey Z — Dubai bartender behind the bar at Harat's Republic. Watch a negroni come together, browse the reels, and book a call to talk drinks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GRAIN -->
+<div class="grain"></div>
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- PRELOADER -->
+<div class="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-glass">
+      <div class="preloader-liquid"></div>
+    </div>
+    <div class="preloader-word">ruskiyarab</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="#top" class="site-name" data-magnetic>Andrey<span class="dot">.</span></a>
+  <nav>
+    <a href="#negroni" data-hover>The Negroni</a>
+    <a href="#bar" data-hover>Behind the Bar</a>
+    <a href="#about" data-hover>About</a>
+    <a href="#daily" data-hover>Daily Pour</a>
+    <a href="#book" class="nav-cta" data-hover>Book a Call</a>
+  </nav>
+  <button class="menu-btn" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <a href="#negroni" data-hover>The Negroni</a>
+  <a href="#bar" data-hover>Behind the Bar</a>
+  <a href="#about" data-hover>About</a>
+  <a href="#daily" data-hover>Daily Pour</a>
+  <a href="#book" data-hover>Book a Call</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-vignette"></div>
+
+    <div class="badge-pill badge-pill-1" data-float data-hover>Behind the bar · Harat's Republic</div>
+    <div class="badge-pill badge-pill-2" data-float data-hover>Dubai, UAE</div>
+    <div class="badge-pill badge-pill-3" data-float data-hover>raised in the Emirates 🇦🇪</div>
+
+    <div class="hero-content">
+      <span class="hero-badge">Bartender · @ruskiyarab</span>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Good</span> <span class="word">drinks</span></span>
+        <span class="line"><span class="word">are</span> <span class="word hl">stirred</span><span class="word">,</span></span>
+        <span class="line"><span class="word">not</span> <span class="word">rushed</span><span class="word dot-accent">.</span></span>
+      </h1>
+      <p class="hero-sub">I'm Andrey — behind the bar in Dubai, learning something new every shift and pouring it into every glass.</p>
+      <a href="#negroni" class="hero-cta" data-hover data-magnetic>
+        <span>Watch me build a negroni</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="scroll-cue"><span>scroll to pour</span><i></i></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Negroni</span><span>◆</span>
+      <span>Equal Parts</span><span>◆</span>
+      <span>Stirred, Never Shaken</span><span>◆</span>
+      <span>Orange Peel</span><span>◆</span>
+      <span>One Big Cube</span><span>◆</span>
+      <span>Negroni</span><span>◆</span>
+      <span>Equal Parts</span><span>◆</span>
+      <span>Stirred, Never Shaken</span><span>◆</span>
+      <span>Orange Peel</span><span>◆</span>
+      <span>One Big Cube</span><span>◆</span>
+    </div>
+  </div>
+
+  <!-- THE NEGRONI — pinned scrollytelling -->
+  <section id="negroni" class="negroni">
+    <div class="negroni-pin">
+      <div class="negroni-stage">
+
+        <div class="negroni-copy">
+          <div class="eyebrow">The House Pour</div>
+          <h2>Anatomy of a <span class="hl-mark">Negroni</span></h2>
+          <div class="negroni-steps">
+            <div class="n-step" data-step="0">
+              <span class="n-num">01</span>
+              <h3>The glass</h3>
+              <p>A heavy rocks glass, chilled. The negroni deserves weight in your hand.</p>
+            </div>
+            <div class="n-step" data-step="1">
+              <span class="n-num">02</span>
+              <h3>Ice</h3>
+              <p>One big, clear cube. Slow dilution — the drink should evolve, not drown.</p>
+            </div>
+            <div class="n-step" data-step="2">
+              <span class="n-num">03</span>
+              <h3>30ml gin</h3>
+              <p>London dry. The backbone — juniper cutting through everything sweet.</p>
+            </div>
+            <div class="n-step" data-step="3">
+              <span class="n-num">04</span>
+              <h3>30ml Campari</h3>
+              <p>The bitter red soul of the drink. No substitutes, no apologies.</p>
+            </div>
+            <div class="n-step" data-step="4">
+              <span class="n-num">05</span>
+              <h3>30ml sweet vermouth</h3>
+              <p>Rosso. It rounds the bitterness into something you keep coming back to.</p>
+            </div>
+            <div class="n-step" data-step="5">
+              <span class="n-num">06</span>
+              <h3>Stir &amp; peel</h3>
+              <p>20–30 seconds with a bar spoon. Express an orange peel over the top. Done.</p>
+            </div>
+          </div>
+          <div class="ratio-badges">
+            <span class="ratio-badge">1 gin</span>
+            <span class="ratio-badge">1 campari</span>
+            <span class="ratio-badge">1 vermouth</span>
+          </div>
+        </div>
+
+        <div class="negroni-glass-wrap">
+          <svg class="negroni-svg" viewBox="0 0 400 520" fill="none" aria-label="Animated negroni being built step by step">
+            <defs>
+              <clipPath id="glassClip">
+                <path d="M105 150 L110 440 Q110 460 130 460 L270 460 Q290 460 290 440 L295 150 Z"/>
+              </clipPath>
+              <linearGradient id="ginGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e8e4da" stop-opacity="0.35"/>
+                <stop offset="1" stop-color="#d8d4c8" stop-opacity="0.5"/>
+              </linearGradient>
+              <linearGradient id="campariGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e5383b"/>
+                <stop offset="1" stop-color="#a4161a"/>
+              </linearGradient>
+              <linearGradient id="vermouthGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#d1495b"/>
+                <stop offset="1" stop-color="#7f2932"/>
+              </linearGradient>
+              <linearGradient id="finalGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c9314b"/>
+                <stop offset="1" stop-color="#8f1d2c"/>
+              </linearGradient>
+            </defs>
+
+            <!-- glass body -->
+            <g class="g-glass">
+              <path d="M100 140 L106 444 Q106 466 128 466 L272 466 Q294 466 294 444 L300 140 Z"
+                    stroke="rgba(240,234,220,0.55)" stroke-width="5" fill="rgba(255,255,255,0.03)"/>
+              <ellipse cx="200" cy="140" rx="100" ry="14" stroke="rgba(240,234,220,0.55)" stroke-width="5" fill="none"/>
+              <path class="g-shine" d="M125 170 L129 430" stroke="rgba(255,255,255,0.18)" stroke-width="7" stroke-linecap="round"/>
+            </g>
+
+            <!-- liquid layers (clipped to glass) -->
+            <g clip-path="url(#glassClip)">
+              <rect class="liq liq-gin"      x="90" y="460" width="220" height="110" fill="url(#ginGrad)"/>
+              <rect class="liq liq-campari"  x="90" y="460" width="220" height="110" fill="url(#campariGrad)" opacity="0.9"/>
+              <rect class="liq liq-vermouth" x="90" y="460" width="220" height="110" fill="url(#vermouthGrad)" opacity="0.9"/>
+              <rect class="liq liq-final"    x="90" y="150" width="220" height="330" fill="url(#finalGrad)" opacity="0"/>
+              <!-- swirl lines shown while stirring -->
+              <g class="swirl" opacity="0">
+                <path d="M120 320 Q200 300 280 320" stroke="rgba(255,200,150,0.35)" stroke-width="4" fill="none"/>
+                <path d="M125 360 Q200 385 275 360" stroke="rgba(255,200,150,0.25)" stroke-width="4" fill="none"/>
+                <path d="M130 400 Q200 380 270 400" stroke="rgba(255,200,150,0.18)" stroke-width="4" fill="none"/>
+              </g>
+              <!-- big cube -->
+              <g class="ice">
+                <rect x="150" y="250" width="104" height="104" rx="14"
+                      fill="rgba(220,235,245,0.28)" stroke="rgba(240,250,255,0.75)" stroke-width="4"/>
+                <path d="M165 270 L200 305 M225 268 L200 305 M200 305 L196 340" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </g>
+
+            <!-- pour stream -->
+            <rect class="pour-stream" x="196" y="-10" width="8" height="0" rx="4" fill="#e8e4da"/>
+
+            <!-- bar spoon -->
+            <g class="spoon" opacity="0">
+              <rect x="235" y="20" width="6" height="330" rx="3" fill="#c9a86a" transform="rotate(14 238 20)"/>
+              <ellipse cx="316" cy="352" rx="16" ry="10" fill="#c9a86a" transform="rotate(14 316 352)"/>
+            </g>
+
+            <!-- orange peel -->
+            <g class="peel" opacity="0">
+              <path d="M170 96 Q200 66 232 92 Q212 76 192 84 Q176 90 170 96 Z" fill="#f77f00"/>
+              <path d="M170 96 Q200 66 232 92" stroke="#e36414" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </g>
+            <!-- citrus oil spritz -->
+            <g class="spritz">
+              <circle cx="180" cy="110" r="4" fill="#ffba49" opacity="0"/>
+              <circle cx="205" cy="98"  r="3" fill="#ffba49" opacity="0"/>
+              <circle cx="228" cy="112" r="4" fill="#ffba49" opacity="0"/>
+              <circle cx="192" cy="88"  r="3" fill="#ffd166" opacity="0"/>
+              <circle cx="218" cy="84"  r="3" fill="#ffd166" opacity="0"/>
+            </g>
+          </svg>
+          <div class="negroni-caption"><span class="script">salute</span> — equal parts, endless arguments</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BEHIND THE BAR -->
+  <section id="bar" class="bar-section">
+    <div class="section-head">
+      <div class="eyebrow reveal-up">From the Feed</div>
+      <h2 class="reveal-up">Behind the <span class="hl-mark">bar</span></h2>
+      <div class="section-count reveal-up">@ruskiyarab</div>
+    </div>
+    <p class="deck-hint reveal-up">Straight from Instagram — tap any card to watch it there.</p>
+
+    <div class="ig-grid">
+      <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/reel/DYzQNWBIB9N/" target="_blank" rel="noopener" data-hover data-tilt>
+        <img src="images/reel-gen-z.jpg" alt="Reel: POV working with Gen Z — Andrey pulling a pint at Harat's Republic" loading="lazy">
+        <div class="ig-meta"><span class="ig-type">▶ Reel</span><h3>POV: working with Gen&nbsp;Z 😂</h3></div>
+      </a>
+      <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/reel/DZFzysLoBia/" target="_blank" rel="noopener" data-hover data-tilt>
+        <img src="images/reel-leave-us-alone.jpg" alt="Reel: We're not gonna be in your reels — two bartenders behind the bar" loading="lazy">
+        <div class="ig-meta"><span class="ig-type">▶ Reel</span><h3>"We're not gonna be in your reels."</h3></div>
+      </a>
+      <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/reel/DZvptAPowtv/" target="_blank" rel="noopener" data-hover data-tilt>
+        <img src="images/reel-michelada.jpg" alt="Reel: micheladas and neon at the bar" loading="lazy">
+        <div class="ig-meta"><span class="ig-type">▶ Reel</span><h3>Michelada nights</h3></div>
+      </a>
+      <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/p/DTqoRsriNBe/" target="_blank" rel="noopener" data-hover data-tilt>
+        <img src="images/photo-bottle.jpg" alt="Andrey balancing a bottle of Jack Daniel's on his elbow" loading="lazy">
+        <div class="ig-meta"><span class="ig-type">◉ Photo</span><h3>Chillin 😎</h3></div>
+      </a>
+      <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/p/DTqoRsriNBe/?img_index=3" target="_blank" rel="noopener" data-hover data-tilt>
+        <img src="images/photo-pour.jpg" alt="Andrey free-pouring into a jigger behind the bar" loading="lazy">
+        <div class="ig-meta"><span class="ig-type">◉ Photo</span><h3>Count the pour</h3></div>
+      </a>
+      <a class="ig-card reveal-up" href="https://www.instagram.com/ruskiyarab/p/DTqoRsriNBe/?img_index=4" target="_blank" rel="noopener" data-hover data-tilt>
+        <img src="images/photo-shaker.jpg" alt="Andrey mid-shake with a Boston shaker, grinning" loading="lazy">
+        <div class="ig-meta"><span class="ig-type">◉ Photo</span><h3>Shaken — this once</h3></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about-glow"></div>
+    <div class="about-inner">
+      <div class="about-portrait reveal-up">
+        <img src="images/photo-laugh.jpg" alt="Andrey laughing behind the bar at Harat's Republic">
+        <span class="portrait-tag" data-float>on shift, always 👋</span>
+      </div>
+      <div class="about-text reveal-up">
+        <div class="eyebrow">About</div>
+        <h2>Hi, I'm Andrey — <span class="script">ruskiyarab</span> online.</h2>
+        <p>Raised in the Emirates 🇦🇪, now behind the bar at Harat's Republic in Dubai. I got into bartending because it's equal parts craft and conversation — every shift someone teaches me something, and every week I find a technique, a bottle, or a story worth passing on. This site is where that lands.</p>
+        <a class="about-cta" href="#book" data-hover data-magnetic>Talk drinks with me <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAILY POUR -->
+  <section id="daily" class="daily">
+    <div class="section-head">
+      <div class="eyebrow reveal-up">The Daily Pour</div>
+      <h2 class="reveal-up">New things I find out, <span class="hl-mark">daily</span></h2>
+      <p class="daily-sub reveal-up">Little discoveries from behind the bar — the kind of stuff we can nerd out about on a call.</p>
+    </div>
+    <div class="coaster-row">
+      <article class="coaster c-1 reveal-up" data-hover>
+        <span class="coaster-day">this week</span>
+        <p>Why a negroni tastes better after sitting for two minutes — dilution is an ingredient, not a flaw.</p>
+      </article>
+      <article class="coaster c-2 reveal-up" data-hover>
+        <span class="coaster-day">last shift</span>
+        <p>Express the peel <em>before</em> it touches the glass — the oils land on the surface, not the rim.</p>
+      </article>
+      <article class="coaster c-3 reveal-up" data-hover>
+        <span class="coaster-day">always</span>
+        <p>A michelada at 2am fixes more problems than it causes. Ask the regulars.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- BOOK A CALL -->
+  <section id="book" class="book">
+    <div class="section-head">
+      <div class="eyebrow reveal-up">Pull Up a Stool</div>
+      <h2 class="reveal-up">Let's talk bartending <span class="hl-mark">on a call</span></h2>
+      <p class="book-sub reveal-up">Cocktails, techniques, what I'm learning behind the bar, menus for your venue — 30 minutes, no pressure. DM me and we'll lock a time.</p>
+    </div>
+    <div class="book-actions reveal-up">
+      <a class="book-cta" href="https://ig.me/m/ruskiyarab" target="_blank" rel="noopener" data-hover data-magnetic>
+        <span>DM me on Instagram</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H8M19 5V16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="book-cta ghost" href="https://www.instagram.com/ruskiyarab/" target="_blank" rel="noopener" data-hover>@ruskiyarab</a>
+    </div>
+    <!-- When a Cal.com link exists, swap the buttons above for the inline embed (see julz-portfolio for reference) -->
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Andrey Z</div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/ruskiyarab/" target="_blank" rel="noopener" data-hover>@ruskiyarab</a>
+      <span>·</span>
+      <span>Harat's Republic</span>
+      <span>·</span>
+      <span>Dubai, UAE</span>
+    </div>
+    <div class="footer-meta">© <span id="year"></span> ruskiyarab. Stirred, never shaken.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
